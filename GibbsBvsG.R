@@ -149,7 +149,7 @@ GibbsBvsG <-
 		positions<- matrix(0, ncol=p, nrow=length(depvars))
 		#for (i in 1:length(depvars)){positions[i,]<- grepl(depvars[i], colnames(X), fixed=T)}
 		for (i in 1:length(depvars)){
-			if (sum(depvars[i]==names(groups))>0) positions[i,]<- grepl(paste("group(", depvars[i], sep=""), colnames(X), fixed=T)
+			if (sum(depvars[i]==names(groups))>0) positions[i,]<- grepl(paste("group(", depvars[i], ")", sep=""), colnames(X), fixed=T)
 			else positions[i, which(depvars[i]==colnames(X))]<- 1
 		}
 		#positionsX is a vector of the same length as columns has X
